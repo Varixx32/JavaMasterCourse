@@ -1,0 +1,10 @@
+package com.cursojava.model;
+
+public class Camion extends Vehiculo {
+
+	public void parar() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

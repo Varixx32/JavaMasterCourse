@@ -1,0 +1,62 @@
+package com.cursojava.model;
+
+/**
+ * Clase coche que extiende de vehiculo y añade sus atributos particulares
+ * @author Victor Tercero
+ * @version 1.21
+ *
+ */
+
+public class Coche extends Vehiculo {
+	
+	private static final int N_RUEDAS = 4; 
+	private final String matricula; 
+
+	
+	/*
+	 * El metodo frenar manda un mensaje por la consola y establece la velocidad a cero
+	 */
+
+	public Coche(String matricula) {
+		super();
+		this.matricula = matricula; 
+	}
+
+	public Coche(String color, double velocidad, int numPlazas, String matricula) {
+		super(color, velocidad, numPlazas);
+		this.matricula = matricula; 
+	}
+
+	public void frenar() {
+		System.out.println("Soy un coche con matricula " + matricula +" Y estoy frenando");
+		super.setVelocidad(0);
+	}
+	
+	/*
+	 * El metodo arrancar  tan solo envia un mensaje por consola simulando que arranca
+	 */
+
+	public void arrancar() {
+		System.out.println("Soy un coche con matricula " + matricula +" Y estoy arrancando");
+
+	}
+	/*
+	 * el metodo acelerar recibe una aceleracion y la suma a la velocidad actual. 
+	 * @params: la velocidad total que quieres sumar 
+	 */
+	public void acelerar(double aceleracion) {
+		System.out.println("Soy el coche con matricula " + matricula + " y estoy acelerando " + aceleracion " metros por segundo");
+		super.setVelocidad(getVelocidad()+aceleracion);
+	}
+	/*
+	 * El metodo frenar recibe una deceleracion y la resta a la velocidad actual
+	 * @params: la velocidad total que quieras restar (Siempre debe ser positivo)
+	 */
+
+	public void frenar(double deceleracion) {
+		System.out.println("Soy el coche con matricula " + matricula + " y estoy decelerando " + deceleracion " metros por segundo");
+		super.setVelocidad(getVelocidad()- deceleracion);
+		
+	}
+
+}

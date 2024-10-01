@@ -1,0 +1,5 @@
+package com.cursojava.interfaces;
+
+public interface Calculable {
+
+}

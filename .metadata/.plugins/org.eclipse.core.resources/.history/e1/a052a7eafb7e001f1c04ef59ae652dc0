@@ -1,0 +1,24 @@
+package com.cursojava.model1;
+
+import com.cursojava.interfaces.Calculable;
+
+public class Cuadrado implements Calculable {
+	private double longitudLado;
+	private double area; 
+	private double perimetro; 
+
+	@Override
+	public double calcularArea() {
+		area= longitudLado*longitudLado;
+		return area;
+	}
+	
+	@Override
+	public double calcularPerimetro() {
+		perimetro = longitudLado * 4; 
+		return perimetro;
+	}
+//Description	Resource	Path	Location	Type
+	//The method calcularArea() of type Cuadrado must override or implement a supertype method	Cuadrado.java	/10-FigurasGeometricas/src/com/cursojava/model1	line 8	Java Problem
+
+}

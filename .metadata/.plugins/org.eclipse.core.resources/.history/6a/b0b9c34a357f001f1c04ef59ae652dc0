@@ -1,0 +1,33 @@
+package com.cursojava.model;
+
+public class Camion extends Vehiculo {
+	private static final int N_RUEDAS = 12; 
+	private final String matricula; 
+		
+	public Camion(String matricula) {
+		super();
+		this.matricula = matricula;
+	}
+
+
+
+
+
+
+	public Camion(String color, double velocidad, int numPlazas, double tiempoDeViaje, double espacioRecorrido, String matricula) {
+		super(color, velocidad, numPlazas, tiempoDeViaje, espacioRecorrido);
+		this.matricula = matricula; 
+	}
+
+
+
+
+
+
+	public void parar() {
+
+	}
+
+
+	
+}

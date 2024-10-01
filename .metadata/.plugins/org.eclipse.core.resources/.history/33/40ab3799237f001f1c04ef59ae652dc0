@@ -1,0 +1,48 @@
+package com.cursojava.model;
+
+/**
+ * Clase coche que extiende de vehiculo y añade sus atributos particulares
+ * @author Victor Tercero
+ * @version 1.21
+ *
+ */
+
+public class Coche extends Vehiculo {
+	
+	private static final int N_RUEDAS = 4; 
+	private final String matricula; 
+
+	
+	/*
+	 * El metodo frenar manda un mensaje por la consola y establece la velocidad a cero
+	 */
+
+	public Coche(String matricula) {
+		super();
+		this.matricula = matricula; 
+	}
+
+	public Coche(String color, double velocidad, int numPlazas, String matricula) {
+		super(color, velocidad, numPlazas);
+		this.matricula = matricula; 
+	}
+
+	public void frenar() {
+		System.out.println("Soy un coche con matricula " + matricula +" Y estoy frenando");
+		System.out.println("La distancia recorrida ha sido " + super.getEspacioRecorrido() + " durante un espacio de tiempo de " + super.getTiempoDeViaje() + " segundos ");
+		System.out.println("Con una velocidad media " + super.getEspacioRecorrido()/super.getTiempoDeViaje() + " m/s");
+	}
+	
+	/*
+	 * El metodo arrancar  tan solo envia un mensaje por consola y establece el tiempo de viaje, la velocidad y la distancia recorrida a 0; 
+	 */
+
+	public void arrancar() {
+		System.out.println("Soy un coche con matricula " + matricula +" Y estoy arrancando");
+		super.setEspacioRecorrido(0);
+		super.setTiempoDeViaje(0);
+		super.setVelocidad(0);
+	}
+	
+
+}

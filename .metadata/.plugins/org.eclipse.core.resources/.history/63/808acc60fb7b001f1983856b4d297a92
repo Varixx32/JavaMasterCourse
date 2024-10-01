@@ -1,0 +1,19 @@
+package com.cursojava.model;
+
+import com.cursojava.interfaz.Mascota;
+
+public class Pez extends Animal implements Mascota{
+	private String nombrePez;
+
+	@Override
+	public void jugar() {
+		System.out.println("Estoy nadando");
+	}
+	public void andar() {
+		super.andar(); 
+		System.out.println("No ando, nado");
+	}
+	
+	
+
+}

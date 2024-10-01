@@ -1,0 +1,36 @@
+package com.cursojava.model;
+
+/**
+ * Clase coche que extiende de vehiculo y añade sus atributos particulares
+ * @author Victor Tercero
+ * @version 1.21
+ *
+ */
+
+public class Coche extends Vehiculo {
+	
+	private static final int N_RUEDAS = 4; 
+	private final String matricula; 
+
+
+	public void frenar() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void arrancar() {
+		System.out.println("Soy un coche con matricula " + matricula +" Y estoy arrancando");
+
+	}
+
+	public void acelerar(double aceleracion) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void frenar(double deceleracion) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

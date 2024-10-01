@@ -1,0 +1,16 @@
+package com.cursojava.model2;
+
+public abstract class FiguraGeometrica {
+	private double base; 
+	private double altura; 
+	private double area; 
+	private double perimetro; 
+	
+	private double calcularPerimetro() {
+		return 0;
+	}
+	private double calcularArea() {
+		return 0; 
+	}
+
+}

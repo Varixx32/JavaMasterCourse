@@ -1,0 +1,20 @@
+package snippet;
+
+public class Snippet {
+	Se pretende realizar una aplicación en Java para la gestión y venta de 
+	productos de una tienda de informática.  
+	 
+	En la tienda se venden dos tipos de productos: ordenadores y teléfonos 
+	móviles.  
+	La información que hay que guardar de cualquier producto es un código de 
+	producto único para la tienda, el modelo, el precio y la cantidad que tienen 
+	actualmente para vender.  
+	 
+	De los ordenadores hay que guardar  las características del mismo como el 
+	procesador, la cantidad de memoria, la capacidad de su disco duro, etc. De los 
+	teléfonos móviles hay que guardar el operador que lo comercializa.  
+	 
+	Se pide: Modelar (diagrama de Clases) y codificar las clases que representan 
+	los productos de la tienda. 
+}
+

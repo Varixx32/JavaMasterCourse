@@ -1,0 +1,18 @@
+package com.cursojava.model;
+
+public class Mobile extends Product {
+	private String provider;
+
+	public Mobile(String productCode, String model, float price, String provider) {
+		super(productCode, model, price);
+		this.provider = provider; 
+	}
+
+	public Mobile(String productCode) {
+		super(productCode);
+		// TODO Auto-generated constructor stub
+	} 
+	
+	
+	
+}

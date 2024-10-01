@@ -1,0 +1,47 @@
+package com.cursojava.model;
+
+import com.cursojava.interfaz.Conducible;
+
+public abstract class Vehiculo implements Conducible{
+	private String color; 
+	private double velocidad;	
+	private int numPlazas;
+	
+	//Constructores, Para este ejemplo creare uno vacio y uno con todos los parametros
+	//Esto es porque creo que todos los atributos son inherentes a todos los vehiculos
+	
+	public Vehiculo(String color, double velocidad, int numPlazas) {
+		super();
+		this.color = color;
+		this.velocidad = velocidad;
+		this.numPlazas = numPlazas;
+	}
+	
+	public Vehiculo() {
+		super(); 
+	}
+	
+	
+	//Getters y Setters
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public double getVelocidad() {
+		return velocidad;
+	}
+	public void setVelocidad(double velocidad) {
+		this.velocidad = velocidad;
+	}
+	public int getNumPlazas() {
+		return numPlazas;
+	}
+	public void setNumPlazas(int numPlazas) {
+		this.numPlazas = numPlazas;
+	} 
+	
+	
+	
+}

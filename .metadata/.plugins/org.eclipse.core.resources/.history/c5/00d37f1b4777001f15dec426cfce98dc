@@ -1,0 +1,5 @@
+package com.cursojava.model;
+
+public class Computers extends Product {
+
+}

@@ -1,0 +1,15 @@
+package com.cursojava.interfaz;
+
+/**
+ * Interfaz conducible que implementaran todos los vehiculos con metodos que emulan la conduccion
+ * @author Victor Tercero
+ * @version 1.21
+ *
+ */
+
+public interface Conducible {
+	public void acelerar (double aceleracion); 
+	public void frenar (double deceleracion); 
+	public void frenar(); 
+	public void arrancar(); 
+}

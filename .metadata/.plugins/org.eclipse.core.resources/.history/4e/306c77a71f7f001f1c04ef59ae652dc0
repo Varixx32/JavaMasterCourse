@@ -1,0 +1,25 @@
+package com.cursojava.model;
+
+public class Coche extends Vehiculo {
+
+	public void avanzar(double distancia) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void retroceder(double distancia) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void frenar() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void arrancar() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

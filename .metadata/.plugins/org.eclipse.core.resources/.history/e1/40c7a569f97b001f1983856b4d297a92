@@ -1,0 +1,5 @@
+package com.cursojava.interfaz;
+
+public interface Animal {
+
+}
