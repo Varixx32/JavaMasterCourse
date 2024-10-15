@@ -15,7 +15,6 @@
     <form action="ModificarProductoServlet" method="post">	
     	<input type="hidden" name="nombre" value="<%= producto.getNombre()%>">
         <p>Categoría:</p>
-        <p>Categoria</p>
         <select id="categoria" name="categoria" value="<%=producto.getCategoria()%>">
             <option value="ALIMENTOS">Alimentos</option>
             <option value="ELECTRONICA">Electrónica</option>

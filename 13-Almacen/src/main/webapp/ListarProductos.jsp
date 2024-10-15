@@ -7,7 +7,6 @@
     <title>Listado de Productos</title>
 </head>
 <body>
-//reboot de la pagina
  <form action="BuscarProducto.jsp" method="post">
 	<input type="text" name="busqueda">
         <input type="submit" value="Buscar">
@@ -37,7 +36,7 @@
                 <td>
                     
                     <a href="ModificarProducto.jsp?nombre=<%= producto.getNombre() %>">Editar</a>                 
-                    <form action="EliminarProducto" method="post" style="display:inline;">
+                    <form action="EliminarProductoServlet" method="post" style="display:inline;">
                         <input type="hidden" name="nombre" value="<%= producto.getNombre() %>">
                         <input type="submit" value="Eliminar">
                     </form>

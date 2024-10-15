@@ -36,7 +36,7 @@
 				<td><%=producto.getStock()%></td>
 				<td><a
 					href="ModificarProducto.jsp?nombre=<%=producto.getNombre()%>">Editar</a>
-					<form action="EliminarProducto" method="post">
+					<form action="EliminarProductoServlet" method="post">
 						<input type="hidden" name="nombre" value="<%=producto.getNombre()%>"> 
 						<input type="submit" value="Eliminar">
 					</form></td>
