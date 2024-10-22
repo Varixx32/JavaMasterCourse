@@ -1,0 +1,14 @@
+Una empresa en su base de datos tiene la siguiente información de sus empleados: nombre, 
+apellido1, apellido2 fecha de nacimiento y salario. 
+Realiza un proyecto java que permita: 
+• Insertar empleados. 
+• Modificar los datos de un empleado. 
+• Mostrar en consola todos los empleados de la empresa con toda la información que se 
+tiene de ellos. 
+• Buscar los empleados con un apellido1 determinado. 
+• Eliminar un empleado. 
+• Conocer el salario medio. 
+Reflexiona sobre la mejor organización del proyecto teniendo en cuenta el uso adecuado de 
+paquetes, clases, métodos, etc.  
+ 
+ 
