@@ -191,6 +191,13 @@ public class EmpleadoControlador {
 		}
 	}
 	/**
+	 * imprimirSueldoPromedio imprime por pantalla el sueldo promedio de todos los empleados
+	 */
+	public static void imprimirSueldoPromedio() {
+		double sueldoPromedio = empleadoDAO.selectSalarioMedio();
+		System.out.println("El sueldo promedio de todos los empleados es: " + sueldoPromedio);
+	}
+	/**
 	 * insertarEmpleado inserta un empleado en la base de datos. Este metodo esta para asegurar la encapsulacion. No necesita hacer comprobaciones ya que llegados a este punto estan todas hechas.
 	 * @param empleado a insertar
 	 */

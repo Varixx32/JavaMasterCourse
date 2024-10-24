@@ -17,10 +17,11 @@ public class EmpleadoVista {
             System.out.println("---- Menú de Gestión de Empleados ----");
             System.out.println("1. Listar todos los empleados");
             System.out.println("2. Buscar empleado por apellido");
-            System.out.println("3. Insertar nuevo empleado");
-            System.out.println("4. Actualizar empleado");
-            System.out.println("5. Eliminar empleado");
-            System.out.println("6. Salir");
+            System.out.println("3. Imprimir sueldo promedio por pantalla");
+            System.out.println("4. Insertar nuevo empleado");
+            System.out.println("5. Actualizar empleado");
+            System.out.println("6. Eliminar empleado");
+            System.out.println("7. Salir");
 
             opcion = EmpleadoControlador.introduceInt("Elige una opción: ");
             
@@ -33,15 +34,18 @@ public class EmpleadoVista {
                     EmpleadoControlador.imprimirEmpleadoPorApellido(apellido);
                     break;
                 case 3:
+                    EmpleadoControlador.imprimirSueldoPromedio();
+                    break;    	
+                case 4:
                     insertarNuevoEmpleado();
                     break;
-                case 4:
+                case 5:
                     actualizarEmpleado();
                     break;
-                case 5:
+                case 6:
                     eliminarEmpleado();
                     break;
-                case 6:
+                case 7:
                     System.out.println("Saliendo del sistema...");
                     break;
                 default:

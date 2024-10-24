@@ -16,6 +16,7 @@ public class EmpleadoDAO {
 	private String selectEmpleados = "SELECT * FROM empleados";
 	private String selectEmpleadoApellido = "SELECT * FROM empleados WHERE apellido1 = ?";
 	private String selectEmpleadoId= "SELECT * FROM empleados WHERE id = ?";
+	private String selectSalarioPromedio = "SELECT AVG(salario) AS avg FROM empleados";
 	private String insertEmpleado = "INSERT INTO empleados (nombre, apellido1, apellido2, fecha_nacimiento, salario) VALUES (?, ?, ?, ?, ?)";
 	private String updateEmpleado = "UPDATE empleados SET nombre = ?, apellido1 = ?, apellido2 = ?, fecha_nacimiento = ?, salario = ? WHERE id = ?";
 	private String deleteEmpleado = "DELETE FROM empleados WHERE id = ?";
@@ -111,6 +112,23 @@ public class EmpleadoDAO {
         
         return empleado;
     }
+	
+	public double selectSalarioMedio() {
+        double salarioPromedio = 0;
+        
+        try (PreparedStatement ps = conexion.prepareStatement(selectSalarioPromedio)) {
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {
+                salarioPromedio = rs.getInt("avg");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        
+        return salarioPromedio;
+    }
+	
 	/**
 	 * El metodo insertar Empleado Introduce un emplado en la base de datos
 	 * No hace ninguna comprobacion porque para cuando llega aqui ya todos los datos han sido comprobados
