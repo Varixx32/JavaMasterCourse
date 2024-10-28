@@ -1,0 +1,25 @@
+CREATE DATABASE Videoclub;
+
+
+USE Videoclub;
+
+
+CREATE TABLE Peliculas (
+    Codigo INT PRIMARY KEY auto_increment,
+    Titulo VARCHAR(100) NOT NULL,
+    Director VARCHAR(50) NOT NULL,
+    PrecioAlquiler DECIMAL(5, 2) NOT NULL
+);
+
+INSERT INTO Peliculas (Codigo, Titulo, Director, PrecioAlquiler)
+VALUES 
+    (1, 'Inception', 'Christopher Nolan', 30.00),
+    (2, 'Memento', 'Christopher Nolan', 25.00),
+    (3, 'The Matrix', 'Lana Wachowski', 40.00),
+    (4, 'Amélie', 'Jean-Pierre Jeunet', 18.50),
+    (5, 'Coco', 'Lee Unkrich', 20.00),
+    (6, 'The Grand Budapest Hotel', 'Wes Anderson', 45.00),
+    (7, 'Spirited Away', 'Hayao Miyazaki', 50.00),
+    (8, 'Interstellar', 'Christopher Nolan', 35.00),
+    (9, 'Avatar', 'James Cameron', 22.50),
+    (10, 'Kill Bill', 'Cosme Tarantino', 28.00);
