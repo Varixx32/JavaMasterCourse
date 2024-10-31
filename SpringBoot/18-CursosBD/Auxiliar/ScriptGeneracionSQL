@@ -1,0 +1,32 @@
+
+CREATE DATABASE IF NOT EXISTS curso_db;
+USE curso_db;
+
+CREATE TABLE curso (
+    cod_curso INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    duracion INT NOT NULL,
+    precio DOUBLE NOT NULL
+);
+
+INSERT INTO curso (nombre, duracion, precio) VALUES
+('Matemáticas', 40, 200.0),
+('Historia', 30, 150.0),
+('Inglés', 20, 100.0),
+('Física', 40, 180.0),
+('Química', 30, 150.0),
+('Biología', 25, 100.0),
+('Arte', 20, 120.0),
+('Geografía', 40, 200.0),
+('Música', 25, 150.0),
+('Economía', 30, 180.0),
+('Filosofía', 20, 200.0),
+('Ciencias Sociales', 35, 150.0),
+('Computación', 25, 180.0),
+('Programación', 30, 220.0),
+('Robótica', 20, 250.0),
+('Astronomía', 40, 300.0),
+('Literatura', 40, 200.0),
+('Psicología', 30, 150.0),
+('Cálculo', 25, 180.0),
+('Fotografía', 20, 150.0);
