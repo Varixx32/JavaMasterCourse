@@ -1,0 +1,33 @@
+package com.curso.service;
+
+import com.curso.model.Artista;
+import java.util.List;
+
+/**
+ * Interfaz de servicio para gestionar la lógica de negocio relacionada con los artistas.
+ */
+public interface ArtistaService {
+
+    /**
+     * Obtiene una lista de todos los artistas que están disponibles.
+     *
+     * @return Lista de artistas disponibles.
+     */
+    List<Artista> obtenerArtistasDisponibles();
+
+    /**
+     * Busca un artista específico por su nombre.
+     *
+     * @param nombre Nombre del artista a buscar.
+     * @return El artista encontrado o null si no existe.
+     */
+    Artista obtenerArtistaPorNombre(String nombre);
+
+    /**
+     * Guarda un nuevo artista en el sistema o actualiza uno existente.
+     *
+     * @param artista Objeto Artista a guardar o actualizar.
+     * @return El artista guardado.
+     */
+    Artista guardarArtista(Artista artista);
+}

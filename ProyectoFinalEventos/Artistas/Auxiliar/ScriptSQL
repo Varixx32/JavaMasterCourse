@@ -1,0 +1,17 @@
+CREATE DATABASE artistas_db;
+USE artistas_db;
+
+CREATE TABLE artistas (
+    id_artista BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE,
+    categoria VARCHAR(50) NOT NULL,
+    disponible BOOLEAN NOT NULL
+);
+
+
+INSERT INTO artistas (nombre, categoria, disponible) VALUES
+('Juan Pérez', 'cantante', TRUE),
+('Teatro Clásico', 'actor', TRUE),
+('Jazz Band', 'banda', TRUE),
+('María Fernández', 'pintora', TRUE),
+('Orquesta Sinfónica', 'orquesta', TRUE);

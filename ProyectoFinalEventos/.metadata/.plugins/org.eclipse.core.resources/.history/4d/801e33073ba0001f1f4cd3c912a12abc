@@ -1,0 +1,34 @@
+package com.curso.controller;
+
+import com.curso.model.Artista;
+import com.agencia.artistas.service.ArtistaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/artistas")
+public class ArtistaController {
+
+    @Autowired
+    private ArtistaService artistaService;
+
+    @GetMapping
+    public List<Artista> obtenerArtistasDisponibles() {
+        return artistaService.obtenerArtistasDisponibles();
+    }
+
+    @GetMapping("/{nombre}")
+    public ResponseEntity<Artista> obtenerArtistaPorNombre(@PathVariable String nombre) {
+        Artista artista = artistaService.obtenerArtistaPorNombre(nombre);
+        return artista != null ? ResponseEntity.ok(artista) : ResponseEntity.notFound().build();
+    }
+
+    @PostMapping
+    public Artista crearArtista(@RequestBody Artista artista) {
+        return artistaService.guardarArtista(artista);
+    }
+}
+

@@ -1,0 +1,20 @@
+-- Crear la base de datos para el microservicio de Eventos
+CREATE DATABASE eventos_db;
+USE eventos_db;
+
+-- Creación de la tabla eventos
+CREATE TABLE eventos (
+    id_evento BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE,
+    categoria VARCHAR(50) NOT NULL,
+    fecha_evento DATE NOT NULL,
+    ubicacion VARCHAR(100) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    disponible BOOLEAN NOT NULL
+);
+
+-- Insertar algunos datos de ejemplo
+INSERT INTO eventos (nombre, categoria, fecha_evento, ubicacion, precio, disponible) VALUES
+('Concierto de Rock', 'concierto', '2023-11-20', 'Madrid', 50.00, TRUE),
+('Obra de Teatro', 'teatro', '2023-12-05', 'Barcelona', 30.00, TRUE),
+('Festival de Jazz', 'festival', '2023-12-10', 'Valencia', 75.00, TRUE);

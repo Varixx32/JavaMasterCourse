@@ -1,0 +1,16 @@
+CREATE DATABASE reservas_db;
+USE reservas_db;
+
+
+CREATE TABLE reservas (
+    id_reserva BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre_cliente VARCHAR(100) NOT NULL,
+    dni VARCHAR(20) NOT NULL UNIQUE,
+    id_evento BIGINT NOT NULL,
+    id_artista BIGINT NOT NULL
+);
+
+
+INSERT INTO reservas (nombre_cliente, dni, id_evento, id_artista) VALUES
+('Ana García', '12345678A', 1, 1),
+('Carlos López', '87654321B', 2, 2);

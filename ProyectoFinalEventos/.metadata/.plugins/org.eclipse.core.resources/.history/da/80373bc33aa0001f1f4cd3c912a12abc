@@ -1,0 +1,32 @@
+package com.curso.service;
+
+package com.curso.service;
+
+import com.agencia.artistas.model.Artista;
+import com.agencia.artistas.repository.ArtistaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ArtistaServiceImpl implements ArtistaService {
+
+    @Autowired
+    private ArtistaRepository artistaRepository;
+
+    @Override
+    public List<Artista> obtenerArtistasDisponibles() {
+        return artistaRepository.findByDisponibleTrue();
+    }
+
+    @Override
+    public Artista obtenerArtistaPorNombre(String nombre) {
+        return artistaRepository.findByNombre(nombre);
+    }
+
+    @Override
+    public Artista guardarArtista(Artista artista) {
+        return artistaRepository.save(artista);
+    }
+}

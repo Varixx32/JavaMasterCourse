@@ -1,0 +1,31 @@
+package com.curso.service;
+
+
+import com.curso.model.Evento;
+import com.agencia.eventos.repository.EventoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class EventoServiceImpl implements EventoService {
+
+    @Autowired
+    private EventoRepository eventoRepository;
+
+    @Override
+    public List<Evento> obtenerEventosDisponibles() {
+        return eventoRepository.findByDisponibleTrue();
+    }
+
+    @Override
+    public Evento obtenerEventoPorNombre(String nombre) {
+        return eventoRepository.findByNombre(nombre);
+    }
+
+    @Override
+    public Evento guardarEvento(Evento evento) {
+        return eventoRepository.save(evento);
+    }
+}

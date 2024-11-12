@@ -1,0 +1,50 @@
+package com.curso.service;
+
+import com.curso.model.Evento;
+import com.curso.repository.EventoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * Implementación de {@link EventoService} para gestionar la lógica de negocio relacionada con los eventos.
+ */
+@Service
+public class EventoServiceImpl implements EventoService {
+
+    @Autowired
+    private EventoRepository eventoRepository;
+
+    /**
+     * Obtiene una lista de todos los eventos que están disponibles.
+     *
+     * @return Lista de eventos disponibles.
+     */
+    @Override
+    public List<Evento> obtenerEventosDisponibles() {
+        return eventoRepository.findByDisponibleTrue();
+    }
+
+    /**
+     * Busca un evento específico por su nombre.
+     *
+     * @param nombre Nombre del evento a buscar.
+     * @return El evento encontrado o null si no existe.
+     */
+    @Override
+    public Evento obtenerEventoPorNombre(String nombre) {
+        return eventoRepository.findByNombre(nombre);
+    }
+
+    /**
+     * Guarda un nuevo evento en el sistema o actualiza uno existente.
+     *
+     * @param evento Objeto Evento a guardar o actualizar.
+     * @return El evento guardado.
+     */
+    @Override
+    public Evento guardarEvento(Evento evento) {
+        return eventoRepository.save(evento);
+    }
+}

@@ -1,0 +1,57 @@
+package com.curso.controller;
+
+import com.curso.model.Reserva;
+import com.curso.service.ReservaService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/reservas")
+public class ReservaController {
+
+    @Autowired
+    private ReservaService reservaService;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Value("${eventos.service.url}")
+    private String eventosServiceUrl;
+
+    @Value("${artistas.service.url}")
+    private String artistasServiceUrl;
+
+    @PostMapping
+    public ResponseEntity<Reserva> crearReserva(@RequestBody Reserva reserva) {
+        // Verificar disponibilidad del evento
+        String eventoUrl = eventosServiceUrl + "/eventos/" + reserva.getIdEvento();
+        ResponseEntity<Boolean> eventoDisponible = restTemplate.getForEntity(eventoUrl + "/disponible", Boolean.class);
+
+        Boolean body = eventoDisponible.getBody();
+		if (!body) {
+            return ResponseEntity.badRequest().body(null);
+        }
+
+        // Verificar disponibilidad del artista
+        String artistaUrl = artistasServiceUrl + "/artistas/" + reserva.getIdArtista();
+        ResponseEntity<Boolean> artistaDisponible = restTemplate.getForEntity(artistaUrl + "/disponible", Boolean.class);
+
+        if (!artistaDisponible.getBody()) {
+            return ResponseEntity.badRequest().body(null);
+        }
+
+        // Crear la reserva si ambos están disponibles
+        Reserva nuevaReserva = reservaService.crearReserva(reserva);
+        return ResponseEntity.ok(nuevaReserva);
+    }
+
+    @GetMapping("/evento/{idEvento}")
+    public List<Reserva> obtenerReservasPorEvento(@PathVariable Long idEvento) {
+        return reservaService.obtenerReservasPorEvento(idEvento);
+    }
+}

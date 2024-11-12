@@ -1,0 +1,27 @@
+package com.curso.service;
+
+package com.agencia.reservas.service;
+
+import com.agencia.reservas.model.Reserva;
+import com.agencia.reservas.repository.ReservaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ReservaServiceImpl implements ReservaService {
+
+    @Autowired
+    private ReservaRepository reservaRepository;
+
+    @Override
+    public Reserva crearReserva(Reserva reserva) {
+        return reservaRepository.save(reserva);
+    }
+
+    @Override
+    public List<Reserva> obtenerReservasPorEvento(Long idEvento) {
+        return reservaRepository.findByIdEvento(idEvento);
+    }
+}

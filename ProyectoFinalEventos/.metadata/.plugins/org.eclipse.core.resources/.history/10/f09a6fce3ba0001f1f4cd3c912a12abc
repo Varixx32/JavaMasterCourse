@@ -1,0 +1,2 @@
+spring.application.name=Eventos
+server.port=9091

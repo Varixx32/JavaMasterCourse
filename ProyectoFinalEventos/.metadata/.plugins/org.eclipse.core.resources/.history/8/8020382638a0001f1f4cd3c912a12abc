@@ -1,0 +1,12 @@
+package com.curso.service;
+
+package com.agencia.eventos.service;
+
+import com.agencia.eventos.model.Evento;
+import java.util.List;
+
+public interface EventoService {
+    List<Evento> obtenerEventosDisponibles();
+    Evento obtenerEventoPorNombre(String nombre);
+    Evento guardarEvento(Evento evento);
+}

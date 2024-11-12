@@ -1,0 +1,49 @@
+package com.curso.service;
+
+import com.curso.model.Artista;
+import com.curso.repository.ArtistaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+/**
+ * Implementación de {@link ArtistaService} para gestionar la lógica de negocio relacionada con los artistas.
+ */
+@Service
+public class ArtistaServiceImpl implements ArtistaService {
+
+    @Autowired
+    private ArtistaRepository artistaRepository;
+
+    /**
+     * Obtiene una lista de todos los artistas que están disponibles.
+     *
+     * @return Lista de artistas disponibles.
+     */
+    @Override
+    public List<Artista> obtenerArtistasDisponibles() {
+        return artistaRepository.findByDisponibleTrue();
+    }
+
+    /**
+     * Busca un artista específico por su nombre.
+     *
+     * @param nombre Nombre del artista a buscar.
+     * @return El artista encontrado o null si no existe.
+     */
+    @Override
+    public Artista obtenerArtistaPorNombre(String nombre) {
+        return artistaRepository.findByNombre(nombre);
+    }
+
+    /**
+     * Guarda un nuevo artista en el sistema o actualiza uno existente.
+     *
+     * @param artista Objeto Artista a guardar o actualizar.
+     * @return El artista guardado.
+     */
+    @Override
+    public Artista guardarArtista(Artista artista) {
+        return artistaRepository.save(artista);
+    }
+}

@@ -1,0 +1,12 @@
+package com.curso.service;
+
+
+import com.curso.model.Artista;
+import java.util.List;
+
+public interface ArtistaService {
+    List<Artista> obtenerArtistasDisponibles();
+    Artista obtenerArtistaPorNombre(String nombre);
+    Artista guardarArtista(Artista artista);
+}
+

@@ -1,0 +1,5 @@
+package com.curso.repository;
+
+public class ReservaRepository {
+
+}

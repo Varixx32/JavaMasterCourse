@@ -1,0 +1,12 @@
+package com.curso.repository;
+
+package com.agencia.artistas.repository;
+
+import com.agencia.artistas.model.Artista;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface ArtistaRepository extends JpaRepository<Artista, Long> {
+    List<Artista> findByDisponibleTrue(); // Método para obtener artistas disponibles
+    Artista findByNombre(String nombre);   // Método para buscar un artista por su nombre
+}

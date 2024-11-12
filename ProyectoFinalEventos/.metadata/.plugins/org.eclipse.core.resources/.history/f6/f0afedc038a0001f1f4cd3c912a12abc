@@ -1,0 +1,10 @@
+package com.curso.repository;
+
+import com.curso.model.Evento;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface EventoRepository extends JpaRepository<Evento, Long> {
+    List<Evento> findByDisponibleTrue(); // Método para obtener eventos disponibles
+    Evento findByNombre(String nombre);   // Método para buscar un evento por su nombre
+}

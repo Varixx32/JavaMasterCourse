@@ -1,0 +1,2 @@
+spring.application.name=Artista
+server.port=9091

@@ -1,0 +1,68 @@
+package com.curso.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "reservas")
+public class Reserva {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_reserva")
+    private Long id;
+    
+    @Column(name = "nombre_cliente", nullable = false)
+    private String nombreCliente;
+    
+    @Column(name = "dni", nullable = false, unique = true)
+    private String dni;
+    
+    @Column(name = "id_evento", nullable = false)
+    private Long idEvento;
+    
+    @Column(name = "id_artista", nullable = false)
+    private Long idArtista;
+
+    // Getters y Setters
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public Long getIdEvento() {
+        return idEvento;
+    }
+
+    public void setIdEvento(Long idEvento) {
+        this.idEvento = idEvento;
+    }
+
+    public Long getIdArtista() {
+        return idArtista;
+    }
+
+    public void setIdArtista(Long idArtista) {
+        this.idArtista = idArtista;
+    }
+}
+
