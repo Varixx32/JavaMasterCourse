@@ -68,7 +68,7 @@ public class EventoController {
             @ApiResponse(responseCode = "200", description = "Evento encontrado", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Evento.class))),
             @ApiResponse(responseCode = "404", description = "Evento no encontrado")
     })
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Evento> obtenerEventoPorId(@PathVariable Long id) {
         Evento evento = eventoService.obtenerEventoPorId(id);
         return evento != null ? ResponseEntity.ok(evento) : ResponseEntity.notFound().build();

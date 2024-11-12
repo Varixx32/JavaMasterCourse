@@ -68,7 +68,7 @@ public class ArtistaController {
             @ApiResponse(responseCode = "200", description = "Artista encontrado", content = @Content(mediaType = "application/json", schema = @Schema(implementation = Artista.class))),
             @ApiResponse(responseCode = "404", description = "Artista no encontrado")
     })
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public ResponseEntity<Artista> obtenerArtistaPorId(@PathVariable Long id) {
         Artista artista = artistaService.obtenerArtistaPorId(id);
         return artista != null ? ResponseEntity.ok(artista) : ResponseEntity.notFound().build();

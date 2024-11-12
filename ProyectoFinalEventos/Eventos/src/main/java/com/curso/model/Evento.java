@@ -47,7 +47,6 @@ public class Evento {
      * Ubicación donde se llevará a cabo el evento.
      */
     @Column(name = "ubicacion", nullable = false)
-    @Schema(description = "Ubicación del evento", example = "Madrid", required = true)
     private String ubicacion;
 
     /**

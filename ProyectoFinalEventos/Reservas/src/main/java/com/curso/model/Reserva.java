@@ -6,6 +6,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 /**
  * Representa una reserva en el sistema.
  * Esta entidad contiene información sobre la reserva, como el nombre del cliente, DNI, ID del evento y ID del artista.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
+ * 
  */
 @Entity
 @Table(name = "reservas")
@@ -18,35 +22,30 @@ public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_reserva")
-    @Schema(description = "Identificador único de la reserva", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 
     /**
      * Nombre del cliente que realiza la reserva.
      */
     @Column(name = "nombre_cliente", nullable = false)
-    @Schema(description = "Nombre del cliente que realiza la reserva", example = "Juan Pérez", required = true)
     private String nombreCliente;
 
     /**
      * DNI del cliente que realiza la reserva.
      */
     @Column(name = "dni", nullable = false, unique = true)
-    @Schema(description = "DNI del cliente que realiza la reserva", example = "12345678X", required = true)
     private String dni;
 
     /**
      * Identificador del evento asociado a la reserva.
      */
     @Column(name = "id_evento", nullable = false)
-    @Schema(description = "Identificador del evento asociado a la reserva", example = "1001", required = true)
     private Long idEvento;
 
     /**
      * Identificador del artista asociado a la reserva.
      */
     @Column(name = "id_artista", nullable = false)
-    @Schema(description = "Identificador del artista asociado a la reserva", example = "2001", required = true)
     private Long idArtista;
 
     // Getters y Setters

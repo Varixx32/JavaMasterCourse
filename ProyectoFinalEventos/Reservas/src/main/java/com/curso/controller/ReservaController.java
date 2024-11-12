@@ -1,19 +1,25 @@
 package com.curso.controller;
 
-import com.curso.model.Reserva;
-import com.curso.service.ReservaService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
+import com.curso.model.Reserva;
+import com.curso.service.ReservaService;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 /**
  * Controlador REST para gestionar los endpoints relacionados con las reservas.
@@ -48,25 +54,20 @@ public class ReservaController {
     })
     @PostMapping
     public ResponseEntity<Reserva> crearReserva(@RequestBody Reserva reserva) {
-        // Verificar disponibilidad del evento
-        String eventoUrl = eventosServiceUrl + "/eventos/" + reserva.getIdEvento();
-        ResponseEntity<Boolean> eventoDisponible = restTemplate.getForEntity(eventoUrl + "/disponible", Boolean.class);
+    	String eventoUrl = eventosServiceUrl + "/eventos/id/" + reserva.getIdEvento() + "/disponible";
+    	String artistaUrl = artistasServiceUrl + "/artistas/id/" + reserva.getIdArtista() + "/disponible";
 
-        if (Boolean.FALSE.equals(eventoDisponible.getBody())) {
-            return ResponseEntity.badRequest().body(null);
-        }
+    	// Verificar disponibilidad del evento y del artista
+    	ResponseEntity<Boolean> eventoDisponible = restTemplate.getForEntity(eventoUrl, Boolean.class);
+    	ResponseEntity<Boolean> artistaDisponible = restTemplate.getForEntity(artistaUrl, Boolean.class);
+    	if (Boolean.FALSE.equals(eventoDisponible.getBody()) || Boolean.FALSE.equals(artistaDisponible.getBody())) {
+    	    return ResponseEntity.badRequest().body(null);
+    	}
 
-        // Verificar disponibilidad del artista
-        String artistaUrl = artistasServiceUrl + "/artistas/" + reserva.getIdArtista();
-        ResponseEntity<Boolean> artistaDisponible = restTemplate.getForEntity(artistaUrl + "/disponible", Boolean.class);
 
-        if (Boolean.FALSE.equals(artistaDisponible.getBody())) {
-            return ResponseEntity.badRequest().body(null);
-        }
+    	Reserva nuevaReserva = reservaService.crearReserva(reserva);
+    	return ResponseEntity.ok(nuevaReserva);
 
-        // Crear la reserva si ambos están disponibles
-        Reserva nuevaReserva = reservaService.crearReserva(reserva);
-        return ResponseEntity.ok(nuevaReserva);
     }
 
     /**
