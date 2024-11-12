@@ -8,6 +8,9 @@ import java.time.LocalDate;
 /**
  * Representa un evento en el sistema.
  * Esta entidad contiene información sobre el evento, como su nombre, categoría, fecha, ubicación, precio y disponibilidad.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 @Entity
 @Table(name = "eventos")
@@ -20,28 +23,24 @@ public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_evento")
-    @Schema(description = "Identificador único del evento", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 
     /**
      * Nombre del evento.
      */
     @Column(name = "nombre", nullable = false, unique = true)
-    @Schema(description = "Nombre del evento", example = "Concierto de Rock", required = true)
     private String nombre;
 
     /**
      * Categoría del evento (ejemplo: concierto, obra de teatro, festival).
      */
     @Column(name = "categoria", nullable = false)
-    @Schema(description = "Categoría del evento (ejemplo: concierto, obra de teatro, festival)", example = "concierto", required = true)
     private String categoria;
 
     /**
      * Fecha del evento.
      */
     @Column(name = "fecha_evento", nullable = false)
-    @Schema(description = "Fecha del evento", example = "2023-05-15", required = true, type = "string", format = "date")
     private LocalDate fecha;
 
     /**
@@ -55,14 +54,12 @@ public class Evento {
      * Precio de entrada al evento.
      */
     @Column(name = "precio", nullable = false)
-    @Schema(description = "Precio de la entrada al evento", example = "50.0", required = true)
     private Double precio;
 
     /**
      * Indica si el evento está disponible para reservas o no.
      */
     @Column(name = "disponible", nullable = false)
-    @Schema(description = "Disponibilidad del evento para reservas", example = "true", required = true)
     private Boolean disponible;
 
     // Getters y Setters

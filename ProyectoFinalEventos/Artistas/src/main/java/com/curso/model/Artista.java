@@ -6,10 +6,12 @@ import io.swagger.v3.oas.annotations.media.Schema;
 /**
  * Representa un artista en el sistema.
  * Esta entidad contiene información sobre el artista, como su nombre, categoría y disponibilidad.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 @Entity
 @Table(name = "artistas")
-@Schema(description = "Entidad que representa a un artista")
 public class Artista {
 
     /**
@@ -18,21 +20,19 @@ public class Artista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_artista")
-    @Schema(description = "Identificador único del artista", example = "1", accessMode = Schema.AccessMode.READ_ONLY)
     private Long id;
 
     /**
      * Nombre del artista.
      */
     @Column(name = "nombre", nullable = false, unique = true)
-    @Schema(description = "Nombre del artista", example = "Juan Pérez", required = true)
+    
     private String nombre;
 
     /**
      * Categoría del artista (ejemplo: cantante, actor, banda).
      */
     @Column(name = "categoria", nullable = false)
-    @Schema(description = "Categoría del artista (ejemplo: cantante, actor, banda)", example = "cantante", required = true)
     private String categoria;
 
     /**

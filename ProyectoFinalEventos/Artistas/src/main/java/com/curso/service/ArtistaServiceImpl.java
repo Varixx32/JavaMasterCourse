@@ -9,6 +9,9 @@ import java.util.List;
 
 /**
  * Implementación de la interfaz ArtistaService.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 @Service
 public class ArtistaServiceImpl implements ArtistaService {

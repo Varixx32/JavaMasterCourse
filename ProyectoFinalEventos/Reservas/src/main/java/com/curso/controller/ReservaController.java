@@ -17,6 +17,9 @@ import java.util.List;
 
 /**
  * Controlador REST para gestionar los endpoints relacionados con las reservas.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 @RestController
 @RequestMapping("/reservas")

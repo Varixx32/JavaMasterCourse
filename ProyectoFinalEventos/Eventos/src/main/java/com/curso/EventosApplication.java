@@ -8,9 +8,12 @@ import io.swagger.v3.oas.annotations.info.Info;
 /**
  * Clase principal de la aplicación Spring Boot para el microservicio de Eventos.
  * Inicializa y ejecuta el microservicio.
+ * 	
+ * @author Victor Tercero
+ * @version: 1.21
  */
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "API de Eventos", version = "1.0", description = "API para gestionar eventos en el sistema"))
+@OpenAPIDefinition(info = @Info(title = "API de Eventos", version = "1.21", description = "API para gestionar eventos en el sistema"))
 public class EventosApplication {
 
     /**

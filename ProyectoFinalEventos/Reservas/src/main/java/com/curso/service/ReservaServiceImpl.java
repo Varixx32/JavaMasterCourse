@@ -9,6 +9,9 @@ import java.util.List;
 
 /**
  * Implementación de ReservaService para gestionar la lógica de negocio relacionada con las reservas.
+ * @author Victor Tercero
+ * @version: 1.21
+ *
  */
 @Service
 public class ReservaServiceImpl implements ReservaService {

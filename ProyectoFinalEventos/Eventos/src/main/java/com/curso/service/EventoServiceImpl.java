@@ -9,6 +9,9 @@ import java.util.List;
 
 /**
  * Implementación de la interfaz EventoService.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 @Service
 public class EventoServiceImpl implements EventoService {

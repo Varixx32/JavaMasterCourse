@@ -15,6 +15,9 @@ import java.util.List;
 
 /**
  * Controlador REST para gestionar los endpoints relacionados con los eventos.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 @RestController
 @RequestMapping("/eventos")

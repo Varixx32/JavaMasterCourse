@@ -6,6 +6,9 @@ import java.util.List;
 
 /**
  * Interfaz para los servicios relacionados con los eventos.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 public interface EventoService {
 

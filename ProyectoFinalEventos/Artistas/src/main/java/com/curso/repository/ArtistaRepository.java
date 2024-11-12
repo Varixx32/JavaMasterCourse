@@ -5,8 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * Repositorio de acceso a datos para la entidad {@link Artista}.
+ * Repositorio de acceso a datos para la entidad Artista.
  * Proporciona métodos CRUD y consultas personalizadas para gestionar artistas.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 public interface ArtistaRepository extends JpaRepository<Artista, Long> {
 

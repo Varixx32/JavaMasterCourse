@@ -11,6 +11,9 @@ import io.swagger.v3.oas.annotations.info.Info;
 /**
  * Clase principal de la aplicación Spring Boot para el microservicio de Artistas.
  * Proporciona configuración básica de inicio y el bean RestTemplate.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 @SpringBootApplication(scanBasePackages = {"com.curso.controller", "com.curso.service"})
 public class ArtistasApplication {

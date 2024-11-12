@@ -15,6 +15,9 @@ import java.util.List;
 
 /**
  * Controlador REST para gestionar los endpoints relacionados con los artistas.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 @RestController
 @RequestMapping("/artistas")

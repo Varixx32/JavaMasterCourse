@@ -5,8 +5,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 /**
- * Repositorio de acceso a datos para la entidad {@link Evento}.
+ * Repositorio de acceso a datos para la entidad evento.
  * Proporciona métodos CRUD y consultas personalizadas para gestionar eventos.
+ * 
+ * @author Victor Tercero
+ * @version: 1.21
  */
 public interface EventoRepository extends JpaRepository<Evento, Long> {
 
